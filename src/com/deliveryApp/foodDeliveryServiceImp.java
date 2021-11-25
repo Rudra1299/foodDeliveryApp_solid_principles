@@ -19,7 +19,7 @@ public class foodDeliveryServiceImp implements foodDeliveryService{
 
     public foodDeliveryServiceImp(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
             List<String>> idToFoodOrders, Map<String, Double> orderMenu, Map<Integer, Double> orderAmount,
-            Authenticator authenticObject, orderManager orderCreator) {
+            Authenticator authenticObject, orderManager orderCreator)  {
         this.username = username;
         this.password = password;
         this.idToCustomer = idToCustomer;
@@ -28,6 +28,8 @@ public class foodDeliveryServiceImp implements foodDeliveryService{
         this.orderAmount = orderAmount;
         this.authenticObject = authenticObject;
         this.orderCreator = orderCreator;
+        //this.authenticObject = new emailAuthenticator(userAuth);
+        //this,orderCreator = new foodOrderManager(idToOrders, orderMenu, orderAmount);
     }
 
     public String getUsername() {
