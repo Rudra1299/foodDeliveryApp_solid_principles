@@ -34,7 +34,7 @@ public class Main {
             System.out.print("Enter the type - 1. grocery 2. food: " );
             int type = sc.nextInt();
             if(type == 2) {
-                foodDelivery request = new foodDelivery(username, password, userAuth, idToCustomers, idToFoodOrders,
+                FoodDelivery request = new FoodDelivery(username, password, userAuth, idToCustomers, idToFoodOrders,
                         orderMenu, orderAmount);
                 request.service();
                 System.out.println("Do you want to avail discount now (Y/N):");

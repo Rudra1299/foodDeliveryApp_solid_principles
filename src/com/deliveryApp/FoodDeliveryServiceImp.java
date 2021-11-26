@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class foodDeliveryServiceImp implements foodDeliveryService{
+public class FoodDeliveryServiceImp implements FoodDeliveryService {
 
     //user details and required information storage for processing the request
     private String username;
@@ -15,11 +15,11 @@ public class foodDeliveryServiceImp implements foodDeliveryService{
     private Map<Integer, Double> orderAmount;
 
     private Authenticator authenticObject; //reference for authentication instance
-    private orderManager orderCreator; //reference for foodOrderManager instance
+    private OrderManager orderCreator; //reference for foodOrderManager instance
 
-    public foodDeliveryServiceImp(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
+    public FoodDeliveryServiceImp(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
             List<String>> idToFoodOrders, Map<String, Double> orderMenu, Map<Integer, Double> orderAmount,
-            Authenticator authenticObject, orderManager orderCreator)  {
+                                  Authenticator authenticObject, OrderManager orderCreator)  {
         this.username = username;
         this.password = password;
         this.idToCustomer = idToCustomer;

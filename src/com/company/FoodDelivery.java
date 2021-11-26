@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class foodDelivery implements Delivery{
+public class FoodDelivery implements Delivery{
     private static Integer counter;
     {
         counter = 0;
@@ -24,7 +24,7 @@ public class foodDelivery implements Delivery{
         return orderAmount;
     }
 
-    public foodDelivery(String username, String password, Map<String, String> userAuth,
+    public FoodDelivery(String username, String password, Map<String, String> userAuth,
                         Map<Integer, String> idToCustomers, Map<Integer, List<String>> idToFoodOrders,
                         Map<String, Double> orderMenu, Map<Integer, Double>  orderAmount){
         this.username = username;

@@ -2,10 +2,10 @@ package com.deliveryApp;
 
 import java.util.Map;
 
-public class emailAuthenticator implements Authenticator{
+public class EmailAuthenticator implements Authenticator{
     private Map<String, String> userAuth; //Storage of username - passwords
 
-    public emailAuthenticator(Map<String, String> userAuth) {
+    public EmailAuthenticator(Map<String, String> userAuth) {
         this.userAuth = userAuth;
     }
 

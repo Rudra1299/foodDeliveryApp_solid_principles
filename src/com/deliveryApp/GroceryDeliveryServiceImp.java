@@ -13,11 +13,11 @@ public class GroceryDeliveryServiceImp implements GroceryDeliveryService{
     private Map<Integer, Double> orderAmount;
     private static int offerCode = 1800;
     private Authenticator authenticObject; //reference for authentication instance
-    private orderManager orderCreator; //reference for foodOrderManager instance
+    private OrderManager orderCreator; //reference for foodOrderManager instance
 
     public GroceryDeliveryServiceImp(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
             List<String>> idToOrders, Map<String, Double> orderMenu, Map<Integer, Double> orderAmount,
-                                  Authenticator authenticObject, orderManager orderCreator) {
+                                  Authenticator authenticObject, OrderManager orderCreator) {
         this.username = username;
         this.password = password;
         this.idToCustomer = idToCustomer;

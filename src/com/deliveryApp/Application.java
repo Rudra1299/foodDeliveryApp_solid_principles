@@ -29,9 +29,9 @@ public class Application {
         groceryMenu.put("wheat", 168.00);
 
         Scanner sc = new Scanner(System.in);
-        Authenticator authenticObject = new emailAuthenticator(userAuth);
+        Authenticator authenticObject = new EmailAuthenticator(userAuth);
         DeliveryService request;
-        orderManager orderCreator;
+        OrderManager orderCreator;
 
         //checking authentication to enter the valid user
         while(true) {
@@ -43,12 +43,12 @@ public class Application {
                 System.out.print("Enter the type - 1. grocery 2. food: ");
                 int choose = sc.nextInt();
                 if (choose == 2) {
-                    orderCreator = new foodOrderManager(idToOrders, orderMenu, orderAmount);
-                    request = (foodDeliveryService) new foodDeliveryServiceImp(username, password, idToCustomer, idToOrders,
+                    orderCreator = new FoodOrderManager(idToOrders, orderMenu, orderAmount);
+                    request = (FoodDeliveryService) new FoodDeliveryServiceImp(username, password, idToCustomer, idToOrders,
                             orderMenu, orderAmount,
                             authenticObject, orderCreator);
                 } else {
-                    orderCreator = new groceryOrderManager(idToOrders, groceryMenu, orderAmount);
+                    orderCreator = new GroceryOrderManager(idToOrders, groceryMenu, orderAmount);
                     request = (GroceryDeliveryService) new GroceryDeliveryServiceImp(username, password, idToCustomer,
                             idToOrders,
                             groceryMenu, orderAmount,
@@ -61,13 +61,13 @@ public class Application {
             }
 
             //invoking food refund service and discount service
-            if (request instanceof foodDeliveryService) {
+            if (request instanceof FoodDeliveryService) {
 
                 if(!discountAvailers.contains(username)) {
                     System.out.print("you are eligible for discount want to avail now (Y/N) ?:");
                     char dis = sc.next().charAt(0);
                     if (dis == 'Y') {
-                        ((foodDeliveryService) request).discountAvail();
+                        ((FoodDeliveryService) request).discountAvail();
                         discountAvailers.add(username);
                     } else {
                         System.out.println("Discount is stored for future");
@@ -77,7 +77,7 @@ public class Application {
                 System.out.print("Are you willing to get refund? (Y/N) : ");
                 char response = sc.next().charAt(0);
                 if (response == 'Y') {
-                    request = new foodDeliveryServiceAndRefund(username, password, idToCustomer, idToOrders,
+                    request = new FoodDeliveryServiceAndRefund(username, password, idToCustomer, idToOrders,
                             orderMenu, orderAmount,
                             authenticObject, orderCreator);
                     request.service();

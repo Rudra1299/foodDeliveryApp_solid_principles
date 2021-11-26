@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class foodDeliveryServiceAndRefund extends foodDeliveryServiceImp{
+public class FoodDeliveryServiceAndRefund extends FoodDeliveryServiceImp {
 
-    public foodDeliveryServiceAndRefund(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
+    public FoodDeliveryServiceAndRefund(String username, String password, Map<Integer, String> idToCustomer, Map<Integer,
             List<String>> idToFoodOrders, Map<String, Double> orderMenu, Map<Integer, Double> orderAmount,
-                                        Authenticator authenticObject, orderManager orderCreator) {
+                                        Authenticator authenticObject, OrderManager orderCreator) {
         super(username, password, idToCustomer, idToFoodOrders, orderMenu, orderAmount, authenticObject, orderCreator);
     }
 

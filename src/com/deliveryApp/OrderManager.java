@@ -1,5 +1,5 @@
 package com.deliveryApp;
 
-public interface orderManager {
+public interface OrderManager {
     int placeOrder();
 }
